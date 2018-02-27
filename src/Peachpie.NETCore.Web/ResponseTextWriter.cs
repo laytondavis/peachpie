@@ -14,15 +14,15 @@ namespace Peachpie.Web
     /// </summary>
     sealed class ResponseTextWriter : TextWriter
     {
-        readonly HttpResponse _response;
+        readonly Stream _responseStream;
         readonly Encoding _encoding;
 
-        public ResponseTextWriter(HttpResponse response, Encoding encoding)
+        public ResponseTextWriter(Stream responseStream, Encoding encoding)
         {
-            Debug.Assert(response != null);
+            Debug.Assert(responseStream != null);
             Debug.Assert(encoding != null);
 
-            _response = response;
+            _responseStream = responseStream;
             _encoding = encoding;
         }
 
@@ -33,7 +33,7 @@ namespace Peachpie.Web
             // TODO: optimize, do not allocate byte array over and over
 
             var bytes = _encoding.GetBytes(value);
-            _response.Body.Write(bytes, 0, bytes.Length);
+            _responseStream.Write(bytes, 0, bytes.Length);
         }
 
         public override void Write(char value)

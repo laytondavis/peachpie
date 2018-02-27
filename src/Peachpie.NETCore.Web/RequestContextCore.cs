@@ -265,7 +265,7 @@ namespace Peachpie.Web
         /// </summary>
         Timer _requestTimer;
 
-        public RequestContextCore(HttpContext httpcontext, string rootPath, Encoding encoding)
+        public RequestContextCore(HttpContext httpcontext, Stream responseStream, string rootPath, Encoding encoding)
         {
             Debug.Assert(httpcontext != null);
             Debug.Assert(encoding != null);
@@ -275,7 +275,7 @@ namespace Peachpie.Web
 
             this.RootPath = rootPath;
 
-            this.InitOutput(httpcontext.Response.Body, new ResponseTextWriter(httpcontext.Response, encoding));
+            this.InitOutput(responseStream, new ResponseTextWriter(responseStream, encoding));
             this.InitSuperglobals();
 
             // TODO: start session if AutoStart is On

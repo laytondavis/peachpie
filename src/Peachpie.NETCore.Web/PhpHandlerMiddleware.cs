@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Pchp.Core.Utilities;
 using System.Diagnostics;
+using System.IO;
 
 namespace Peachpie.Web
 {
@@ -82,14 +83,23 @@ namespace Peachpie.Web
             var script = RequestContextCore.ResolveScript(context.Request);
             if (script.IsValid)
             {
-                return Task.Run(() =>
+                // Gather the output to a MemoryStream and return it all at once, setting the Content-Length header
+                // to prevent chunked transfer encoding
+                using (var outStream = new MemoryStream())
                 {
-                    using (var phpctx = new RequestContextCore(context, _rootPath, _options.StringEncoding))
+                    using (var phpctx = new RequestContextCore(context, outStream, _rootPath, _options.StringEncoding))
                     {
                         _options.InvokeBeforeRequest(phpctx);
                         phpctx.ProcessScript(script);
                     }
-                });
+
+                    ArraySegment<byte> outData;
+                    bool isValid = outStream.TryGetBuffer(out outData);
+                    Debug.Assert(isValid);
+
+                    context.Response.ContentLength = outData.Count;
+                    return context.Response.Body.WriteAsync(outData.Array, outData.Offset, outData.Count);
+                }
             }
 
             return _next(context);
