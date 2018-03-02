@@ -8,8 +8,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Pchp.Core;
 using Pchp.Core.Utilities;
+using Pchp.Library.Streams;
 
-namespace Pchp.Library.Streams
+namespace Peachpie.Library.Network
 {
     /// <summary>
 	/// Gives access to various network-based stream properties.
@@ -409,7 +410,7 @@ namespace Pchp.Library.Streams
                 if (!socket.ConnectAsync(address, port).Wait((int)(timeout * 1000)))
                 {
                     Debug.Assert(!socket.Connected);
-                    PhpException.Throw(PhpError.Warning, string.Format(Resources.LibResources.socket_open_timeout, FileSystemUtils.StripPassword(remoteSocket)));
+                    PhpException.Throw(PhpError.Warning, string.Format(Resources.socket_open_timeout, FileSystemUtils.StripPassword(remoteSocket)));
                     return null;
                 }
 
@@ -427,7 +428,7 @@ namespace Pchp.Library.Streams
                 errstr = e.Message;
             }
 
-            PhpException.Throw(PhpError.Warning, string.Format(Resources.LibResources.socket_open_error, FileSystemUtils.StripPassword(remoteSocket), errstr));
+            PhpException.Throw(PhpError.Warning, string.Format(Resources.socket_open_error, FileSystemUtils.StripPassword(remoteSocket), errstr));
             return null;
         }
 

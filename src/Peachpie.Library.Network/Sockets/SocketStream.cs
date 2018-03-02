@@ -1,5 +1,6 @@
 ﻿using Pchp.Core;
 using Pchp.Core.Resources;
+using Pchp.Library.Streams;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,7 +9,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 
-namespace Pchp.Library.Streams
+namespace Peachpie.Library.Network
 {
     /// <summary>
 	/// An implementation of <see cref="PhpStream"/> as an encapsulation 
