@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net46;netstandard2.0</TargetFrameworks>
+    <PackageProjectUrl>https://github.com/laytondavis/peachpie</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/laytondavis/peachpie</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>peachpie;library;postgresql</PackageTags>
+    <Version>0.9.0-dev</Version>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Npgsql" Version="3.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Peachpie.Library.Scripting\Peachpie.Library.Scripting.csproj" />
+    <ProjectReference Include="..\Peachpie.Library.XmlDom\Peachpie.Library.XmlDom.csproj" />
+    <ProjectReference Include="..\Peachpie.Library\Peachpie.Library.csproj" />
+    <ProjectReference Include="..\Peachpie.Runtime\Peachpie.Runtime.csproj" />
+  </ItemGroup>
+
+</Project>

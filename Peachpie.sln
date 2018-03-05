@@ -21,6 +21,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peachpie.NETCore.Web", "src\Peachpie.NETCore.Web\Peachpie.NETCore.Web.csproj", "{039A63A4-9A86-477A-B1C6-1C7172B90F81}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peachpie.App", "src\Peachpie.App\Peachpie.App.csproj", "{20059EE9-94A7-4DD6-9715-1865F4349EB4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF} = {F66483C4-DD1E-4BCA-9560-3277C0286ABF}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peachpie.Library", "src\Peachpie.Library\Peachpie.Library.csproj", "{6B01EDAF-56BD-4302-98FD-EDD81FA2617E}"
 EndProject
@@ -74,6 +77,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peachpie.Library.XmlDom", "src\Peachpie.Library.XmlDom\Peachpie.Library.XmlDom.csproj", "{92192652-C989-4882-A356-5149255A76F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peachpie.Library.Network", "src\Peachpie.Library.Network\Peachpie.Library.Network.csproj", "{07CE395A-7873-40A5-A92D-019CAB583319}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Peachpie.Library.PostgreSql", "src\Peachpie.Library.PostgreSql\Peachpie.Library.PostgreSql.csproj", "{F66483C4-DD1E-4BCA-9560-3277C0286ABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -608,6 +613,26 @@ Global
 		{07CE395A-7873-40A5-A92D-019CAB583319}.Release|x64.Build.0 = Release|Any CPU
 		{07CE395A-7873-40A5-A92D-019CAB583319}.Release|x86.ActiveCfg = Release|Any CPU
 		{07CE395A-7873-40A5-A92D-019CAB583319}.Release|x86.Build.0 = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|ARM.Build.0 = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|x64.Build.0 = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Debug|x86.Build.0 = Debug|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|ARM.Build.0 = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|x64.ActiveCfg = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|x64.Build.0 = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|x86.ActiveCfg = Release|Any CPU
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -635,6 +660,7 @@ Global
 		{A0B305A4-36D2-41AC-BCB3-3D3395D7940A} = {30D6D91F-A671-4E73-A571-5614500FDE0B}
 		{92192652-C989-4882-A356-5149255A76F6} = {30D6D91F-A671-4E73-A571-5614500FDE0B}
 		{07CE395A-7873-40A5-A92D-019CAB583319} = {30D6D91F-A671-4E73-A571-5614500FDE0B}
+		{F66483C4-DD1E-4BCA-9560-3277C0286ABF} = {30D6D91F-A671-4E73-A571-5614500FDE0B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A0FC0FC5-DA92-4FD6-9841-D8ABF963E7AD}
